@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
 
 app.post("/onboard-user", async (req, res) => {
   try {
-    const account = await stripe.accounts.create({type: "express"});
+    const account = await stripe.accounts.create({type: "standard"});
     req.session.accountID = account.id;
 
     const origin = `${req.headers.origin}`;
